@@ -1,29 +1,26 @@
 "use client";
-import { useRouter } from "next/navigation";
-import styles from "./page.module.css";
 import Link from "next/link";
+import styles from "./page.module.css";
+import { useState } from "react";
+import Image from "next/image";
+import Profile from "./img/vercel.svg"
 
 export default function Home() {
-  const route=useRouter()
-  const HandleClick = (item) => {
-    alert("this is" + item);
-  };
-
-  const natigate=(pathdata)=>{
-    route.push(pathdata)
-  }
-
-  return (
+ const[color,setColor]=useState("yellow")
+ return (
     <main className={styles.main}>
-      <h2>functionn event </h2>
-      <button onClick={() => HandleClick("Apple")}>click me</button>
-      <Link href="/login">go to login </Link>
-      <Link href="/about">go to about</Link>
-      <br />
-      <br />
-      <button onClick={()=>natigate("/login")}>login</button>
-      <button onClick={()=>natigate("/about")}>about</button>
-      <button onClick={()=>natigate("/about/aboutstudent")}>Aboutstudent</button>
+      <h2 style={{backgroundColor:color=="yellow"?"yellow":"red"}}>functionn event </h2>
+      <Link href="./ProductlistServer"> go to productlist server</Link>
+      <Image src="
+      https://depositphotos.com/192521134/stock-photo-super-full-blood-moon-move.html
+      
+      "
+      height={500} width={500} alt="img"
+      />
+      <Image src={Profile}
+      height={500} width={500} alt="img"
+      />
+      <img src={Profile.src}  height={500} width={500} alt="img" />
     </main>
   );
 }
