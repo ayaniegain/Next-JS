@@ -1,6 +1,13 @@
 import "./globals.css";
 import oth from "./oth.module.css"
 import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
+
+const roboto= Roboto({
+  weight:"100",
+  subsets:["latin"],
+  display:"swap"
+})
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,6 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body suppressHydrationWarning={true} className={inter.className}>
         <h1 className={oth.clr}>common layout</h1>
+        <h2 className={roboto.className}>use font </h2>
         {children}
       </body>
     </html>

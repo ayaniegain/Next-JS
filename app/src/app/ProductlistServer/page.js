@@ -17,7 +17,7 @@ async function ProductServer() {
       {data.map((e) => (
         <>
         <h2>{e.title}</h2>
-        <Product price={e.price}/>
+        {/* <Product price={e.price}/> */}
         </>
       ))} 
     </>
